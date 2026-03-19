@@ -6,10 +6,12 @@ canvas.height = window.innerHeight;
 
 function gameLoop()
 {
+
 update();
 draw();
 
 requestAnimationFrame(gameLoop);
+
 }
 
 gameLoop();
