@@ -8,6 +8,6 @@ background:black;
 
 canvas
 {
-image-rendering: pixelated;
 display:block;
+image-rendering: pixelated;
 }
