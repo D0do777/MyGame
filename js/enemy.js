@@ -1,6 +1,6 @@
 const enemies = [
 
-{x:600,y:300,width:32,height:32,dir:1}
+{x:600,y:460,width:32,height:32,dir:1}
 
 ];
 
@@ -12,13 +12,15 @@ for(let e of enemies)
 
 e.x += e.dir * 2;
 
-if(e.x < 400 || e.x > 800)
+if(e.x < 500 || e.x > 900)
 e.dir *= -1;
 
 if(collision(player,e))
 {
+
 alert("Game Over");
 location.reload();
+
 }
 
 }
