@@ -1,7 +1,7 @@
 const player =
 {
 x:200,
-y:300,
+y:200,
 
 width:32,
 height:32,
@@ -15,11 +15,15 @@ jump:12,
 gravity:0.6,
 gravityDir:1,
 
+onGround:false,
+
 coins:0
 };
 
 function updatePlayer()
 {
+
+player.onGround = false;
 
 if(keys["d"] || keys["arrowright"])
 player.vx = player.speed;
@@ -34,5 +38,28 @@ player.vy += player.gravity * player.gravityDir;
 
 player.x += player.vx;
 player.y += player.vy;
+
+for(let p of platforms)
+{
+
+if(collision(player,p))
+{
+
+if(player.gravityDir === 1)
+{
+player.y = p.y - player.height;
+player.vy = 0;
+player.onGround = true;
+}
+else
+{
+player.y = p.y + p.height;
+player.vy = 0;
+player.onGround = true;
+}
+
+}
+
+}
 
 }
