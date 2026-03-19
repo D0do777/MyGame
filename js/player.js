@@ -1,22 +1,24 @@
-let isInitialized = false;
+const player = {
+    x: 200,
+    y: 500 - 32, // Commence juste au-dessus de la plateforme
+    width: 32,
+    height: 32,
+    vx: 0,
+    vy: 0,
+    speed: 4,
+    jump: 12,
+    gravity: 0.6,
+    gravityDir: 1,
+    onGround: false,
+    coins: 0
+};
 
 function updatePlayer() {
-    if (!isInitialized) {
-        // Si c’est la première frame, on pose le joueur sur la plateforme et on stoppe la chute
-        player.y = 500 - player.height;
-        player.vy = 0;
-        isInitialized = true;
-    }
-
     player.onGround = false;
 
-    if (keys["d"] || keys["arrowright"]) {
-        player.vx = player.speed;
-    } else if (keys["q"] || keys["arrowleft"]) {
-        player.vx = -player.speed;
-    } else {
-        player.vx = 0;
-    }
+    if (keys["d"] || keys["arrowright"]) player.vx = player.speed;
+    else if (keys["q"] || keys["arrowleft"]) player.vx = -player.speed;
+    else player.vx = 0;
 
     player.vy += player.gravity * player.gravityDir;
 
