@@ -1,11 +1,11 @@
 const lasers = [];
 
-document.addEventListener("mousedown",e=>{
+document.addEventListener("mousedown", e => {
 
 lasers.push({
 
-x:player.x+16,
-y:player.y+16,
+x:player.x + player.width/2,
+y:player.y + player.height/2,
 vx:10
 
 });
