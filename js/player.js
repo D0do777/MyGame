@@ -1,7 +1,8 @@
 const player =
 {
-x:100,
-y:100,
+x:200,
+y:300,
+
 width:32,
 height:32,
 
@@ -22,8 +23,10 @@ function updatePlayer()
 
 if(keys["d"] || keys["arrowright"])
 player.vx = player.speed;
+
 else if(keys["q"] || keys["arrowleft"])
 player.vx = -player.speed;
+
 else
 player.vx = 0;
 
