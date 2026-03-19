@@ -4,14 +4,10 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-function gameLoop()
-{
-
-update();
-draw();
-
-requestAnimationFrame(gameLoop);
-
+function gameLoop() {
+    update();
+    draw();
+    requestAnimationFrame(gameLoop);
 }
 
 gameLoop();
